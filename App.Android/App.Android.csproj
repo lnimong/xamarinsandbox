@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD5233A7-853D-455D-995E-DB0328BFC96A}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Android02</RootNamespace>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AssemblyName>Android02</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\Box.cs" />
+    <Compile Include="CarListActivity.cs" />
+    <Compile Include="Custom\CarsAdapter.cs" />
+    <Compile Include="Custom\CategoryiesAdapter.cs" />
+    <Compile Include="CategoryListActivity.cs" />
+    <Compile Include="BuyTheCarActivity.cs" />
+    <Compile Include="RentTheCarActivity.cs" />
+    <Compile Include="Infra\PhoneService.cs" />
+    <Compile Include="MessageActivity.cs" />
+    <Compile Include="CallActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\layout\CarList.axml" />
+    <AndroidResource Include="Resources\layout\CarPreview.axml" />
+    <AndroidResource Include="Resources\layout\ExampleItem.axml" />
+    <AndroidResource Include="Resources\drawable\Sample.png" />
+    <AndroidResource Include="Resources\layout\CarDetails.axml" />
+    <AndroidResource Include="Resources\layout\CategoryPreview.axml" />
+    <AndroidResource Include="Resources\drawable\i001.png" />
+    <AndroidResource Include="Resources\drawable\i002.png" />
+    <AndroidResource Include="Resources\drawable\i003.png" />
+    <AndroidResource Include="Resources\drawable\i004.png" />
+    <AndroidResource Include="Resources\drawable\i005.png" />
+    <AndroidResource Include="Resources\drawable\i006.png" />
+    <AndroidResource Include="Resources\layout\Rent.axml" />
+    <AndroidResource Include="Resources\layout\Buy.axml" />
+    <AndroidResource Include="Resources\layout\Message.axml" />
+    <AndroidResource Include="Resources\layout\Call.axml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Tool\" />
+    <Folder Include="Custom\" />
+    <Folder Include="Infra\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{5D4D58B9-7DEF-472C-B1A2-09B2603CFD83}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Domain\App.Domain.csproj">
+      <Project>{15B1C651-8444-4A89-9B75-1F9E247204E3}</Project>
+      <Name>App.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

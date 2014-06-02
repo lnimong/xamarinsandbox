@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D4D58B9-7DEF-472C-B1A2-09B2603CFD83}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>App.Common</RootNamespace>
+    <AssemblyName>App.Common</AssemblyName>
+    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\Box.cs" />
+    <Compile Include="PhoneInfraServices\IPhoneService.cs" />
+    <Compile Include="ModelsMVC\CarListModelMVC.cs" />
+    <Compile Include="ModelsMVC\BuyModelMVC.cs" />
+    <Compile Include="ModelsMVC\CallModelMVC.cs" />
+    <Compile Include="ModelsMVC\CarModelMVC.cs" />
+    <Compile Include="ModelsMVC\CategoryListModelMVC.cs" />
+    <Compile Include="ModelsMVC\CategoryModelMVC.cs" />
+    <Compile Include="ModelsMVC\MailModelMVC.cs" />
+    <Compile Include="ModelsMVC\MainMenuModelMVC.cs" />
+    <Compile Include="ModelsMVC\MenuLinkModelMVC.cs" />
+    <Compile Include="ModelsMVC\RentModelMVC.cs" />
+    <Compile Include="ModelsMVC\ServicesModelMVC.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\App.Domain\App.Domain.csproj">
+      <Project>{15B1C651-8444-4A89-9B75-1F9E247204E3}</Project>
+      <Name>App.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PhoneInfraServices\" />
+  </ItemGroup>
+</Project>

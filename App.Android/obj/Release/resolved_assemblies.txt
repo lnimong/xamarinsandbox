@@ -1,0 +1,9 @@
+/Users/appleo/Projects/xamarin.sandbox/App.Android/bin/Release/Android02.dll
+/Users/appleo/Projects/xamarin.sandbox/App.Common/bin/Release/App.Common.dll
+/Users/appleo/Projects/xamarin.sandbox/App.Domain/bin/Release/App.Domain.dll
+/Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v4.4/Mono.Android.dll
+/Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/mscorlib.dll
+/Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/System.Xml.dll
+/Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/System.dll
+/Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/Mono.Security.dll
+/Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/System.Core.dll

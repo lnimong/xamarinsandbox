@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="Android02.Android02">
+	<uses-sdk />
+	<application android:label="Android02" android:theme="@android:style/Theme.NoTitleBar">
+		<activity android:name="android02.CarListActivity" />
+		<activity android:name="android02.BuyTheCarActivity" />
+		<activity android:name="android02.CategoryListActivity" />
+		<activity android:name="android02.RentTheCarActivity" />
+		<activity android:name="android02.MessageActivity" />
+		<activity android:name="android02.CallActivity" />
+	</application>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+</manifest>

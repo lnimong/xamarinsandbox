@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/forListItem">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true">
+        <ImageView
+            android:id="@+id/car_pic"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:src="@drawable/Sample" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/car_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/car_pic"
+        android:layout_marginLeft="75dip"
+        android:layout_centerVertical="true"
+        android:paddingBottom="10dip"
+        android:text="Mercedes"
+        android:textColor="#88AAFF"
+        android:textSize="25dip"
+        android:textStyle="bold"
+        android:typeface="sans" />
+    <TextView
+        android:id="@+id/car_fuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_name"
+        android:layout_alignLeft="@+id/car_name"
+        android:paddingTop="5dip"
+        android:layout_centerHorizontal="true"
+        android:text="Essence"
+        android:textColor="#898989"
+        android:padding="5sp" />
+    <TextView
+        android:id="@+id/car_dist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_name"
+        android:layout_toRightOf="@+id/car_fuel"
+        android:paddingTop="5dip"
+        android:layout_centerHorizontal="true"
+        android:text="12000km"
+        android:textColor="#898989"
+        android:padding="5sp" />
+    <TextView
+        android:id="@+id/car_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_name"
+        android:layout_toRightOf="@+id/car_dist"
+        android:paddingTop="5dip"
+        android:layout_centerHorizontal="true"
+        android:text="2007"
+        android:textColor="#898989"
+        android:padding="5sp" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/forLayout">
+    <TextView
+        android:layout_width="fill_parent"
+        android:text="APPEL EN COURS"
+        android:layout_height="wrap_content"
+        android:textColor="#040404" />
+</LinearLayout>

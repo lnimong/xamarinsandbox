@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">AndroidCarDemo</string>
+	<string name="main_menu_title">Hello World, Click Me!</string>
+	<string name="services_link_label">Services</string>
+	<string name="about_link_label">A Propos</string>
+	<string name="cars_link_label">Nos Voitures</string>
+</resources>
