@@ -7,9 +7,31 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Navigation;
 
 namespace App.WP8.ViewModels
 {
+    public class GoCommand : ICommand
+    {
+        public GoCommand(Action gotopage)
+        {
+            this.gotopage = gotopage;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+        private Action gotopage;
+
+        public void Execute(object parameter)
+        {
+            gotopage();
+        }
+    }
+
     public class ItemViewModel : INotifyPropertyChanged
     {
         private string _lineOne;
@@ -76,6 +98,32 @@ namespace App.WP8.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        private Common.ModelMVC.MenuLinkModelMVC menuLinkModelMVC;
+
+        public ICommand Go
+        {
+            get
+            {
+                return goCommand;
+            }
+            set
+            {
+                if (value != goCommand)
+                {
+                    goCommand = value;
+                    NotifyPropertyChanged("Go");
+                }
+            }
+        }
+
+        public ItemViewModel(Common.ModelMVC.MenuLinkModelMVC model)
+        {
+            // TODO: Complete member initialization
+            this.menuLinkModelMVC = model;
+            this.LineOne = model.Label;
+            goCommand = new GoCommand(() => RequireNavigation(model.Page));
+        }
+
         private void NotifyPropertyChanged(String propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -84,5 +132,9 @@ namespace App.WP8.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+
+        public event Action<string> RequireNavigation;
+        private ICommand goCommand;
     }
 }

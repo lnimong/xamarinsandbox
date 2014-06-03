@@ -1,1 +1,90 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" style="@style/forLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"><ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:id="@+id/sw_layout" android:layout_above="@+id/footer" android:orientation="vertical"><LinearLayout style="@style/forLayout" android:padding="10dip"><TextView android:id="@+id/expl" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="toto" android:layout_marginBottom="20dip" /><EditText android:inputType="textPersonName" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/fname" android:hint="nom" /><EditText android:inputType="textPersonName" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/lname" android:hint="prénom" /><EditText android:inputType="textPersonName" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/zcode" android:hint="code postal" /><EditText android:inputType="textEmailAddress" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/mail" android:hint="email" /><EditText android:inputType="phone" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/phone" android:hint="telephone" /><TextView android:id="@+id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Date de la location souhaitée :" /><EditText android:inputType="date" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/date" android:hint="jj/mm/aaaa" /><TextView android:id="@+id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Durée de la location :" /><EditText android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/jour" android:hint="nombre de jours" /></LinearLayout></ScrollView><LinearLayout android:id="@+id/footer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:orientation="vertical"><Button android:layout_marginTop="30dip" android:text="Valider" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/valid" /></LinearLayout></RelativeLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/forLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/sw_layout"
+        android:layout_above="@+id/footer"
+        android:orientation="vertical">
+        <LinearLayout
+            style="@style/forLayout"
+            android:padding="10dip">
+            <TextView
+                android:id="@+id/expl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="toto"
+                android:layout_marginBottom="20dip" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fname"
+                android:hint="nom" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lname"
+                android:hint="prénom" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/zcode"
+                android:hint="code postal" />
+            <EditText
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mail"
+                android:hint="email" />
+            <EditText
+                android:inputType="phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone"
+                android:hint="telephone" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Date de la location souhaitée :" />
+            <EditText
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/date"
+                android:hint="jj/mm/aaaa" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Durée de la location :" />
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jour"
+                android:hint="nombre de jours" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <Button
+            android:layout_marginTop="30dip"
+            android:text="Valider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/valid" />
+    </LinearLayout>
+</RelativeLayout>
