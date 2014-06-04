@@ -17,8 +17,12 @@ namespace App.WP8
         {
             InitializeComponent();
 
+            App.ViewModel.Goto += (uri) => NavigationService.Navigate(new Uri(uri)) ;
+
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
+
+            
         }
 
         // Load data for the ViewModel Items
@@ -28,6 +32,11 @@ namespace App.WP8
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        private void TextBlock_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
         }
     }
 }

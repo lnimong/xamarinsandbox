@@ -1,9 +1,0 @@
-Android02.MainActivity;android02.MainActivity
-Android02.CarListActivity;android02.CarListActivity
-Android02.Custom.CarsAdapter;android02.custom.CarsAdapter
-Android02.Custom.CategoryiesAdapter;android02.custom.CategoryiesAdapter
-Android02.CategoryListActivity;android02.CategoryListActivity
-Android02.BuyTheCarActivity;android02.BuyTheCarActivity
-Android02.RentTheCarActivity;android02.RentTheCarActivity
-Android02.MessageActivity;android02.MessageActivity
-Android02.CallActivity;android02.CallActivity

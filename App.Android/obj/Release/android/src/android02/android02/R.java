@@ -18,7 +18,8 @@ public final class R {
         public static final int i005=0x7f020004;
         public static final int i006=0x7f020005;
         public static final int icon=0x7f020006;
-        public static final int sample=0x7f020007;
+        public static final int monoandroidsplash=0x7f020007;
+        public static final int sample=0x7f020008;
     }
     public static final class id {
         public static final int about=0x7f060017;
@@ -71,6 +72,7 @@ public final class R {
         public static final int services_link_label=0x7f040003;
     }
     public static final class style {
+        public static final int Mono_Android_Theme_Splash=0x7f050004;
         public static final int forButton=0x7f050002;
         public static final int forLayout=0x7f050000;
         public static final int forListItem=0x7f050001;
