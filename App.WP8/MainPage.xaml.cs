@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using App.WP8.Tool;
 
 namespace App.WP8
 {
@@ -17,12 +18,10 @@ namespace App.WP8
         {
             InitializeComponent();
 
-            App.ViewModel.Goto += (uri) => NavigationService.Navigate(new Uri(uri)) ;
+            App.ViewModel.Goto += (uri) => NavigationService.Navigate(Box.Page(uri)) ;
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
-
-            
         }
 
         // Load data for the ViewModel Items
