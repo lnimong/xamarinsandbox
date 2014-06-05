@@ -37,7 +37,7 @@
             CurrentUICulture of the app at run time.
          -->
 
-        <!--Panorama control-->
+         <!--Panorama control-->
         <phone:Panorama Title="cellenza cars">
             <phone:Panorama.Background>
                 <ImageBrush ImageSource="/App.WP8;component/Assets/PanoramaBackground.png"/>
@@ -47,7 +47,7 @@
             <phone:PanoramaItem Header="">
                 <!--Single line list with text wrapping-->
                 <phone:LongListSelector Margin="0,0,-22,0" 
-					ItemsSource="{Binding MenuItems}">
+                                        ItemsSource="{Binding MenuItems}">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,-6,0,12">
@@ -55,9 +55,9 @@
                                     <Button.Template>
                                         <ControlTemplate>
                                             <TextBlock Text="{Binding LineOne}" 
-												TextWrapping="Wrap" 
-												Style="{StaticResource PhoneTextExtraLargeStyle}" 
-												FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                                                       TextWrapping="Wrap" 
+                                                       Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                                       FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                                         </ControlTemplate>
                                     </Button.Template>
                                 </Button>
@@ -75,22 +75,22 @@
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" 
-								Margin="12,2,0,4" 
-								Height="105" 
-								Width="432">
+                                        Margin="12,2,0,4" 
+                                        Height="105" 
+                                        Width="432">
                                 <!--Replace rectangle with image-->
                                 <Image Source="{Binding Id, Converter={StaticResource ResourceKey=CategoryIdImageConverter}}"  Width="99" 
 									Height="99" />
                                 <StackPanel Width="311" Margin="8,-7,0,0">
                                     <TextBlock Text="{Binding Name}" 
-										TextWrapping="Wrap" 
-										Margin="10,0" 
-										Style="{StaticResource PhoneTextExtraLargeStyle}" 
-										FontSize="{StaticResource PhoneFontSizeLarge}" />
+                                               TextWrapping="Wrap" 
+                                               Margin="10,0" 
+                                               Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                               FontSize="{StaticResource PhoneFontSizeLarge}" />
                                     <TextBlock Text="{Binding Description}" 
-										TextWrapping="Wrap" 
-										Margin="10,-2,10,0" 
-										Style="{StaticResource PhoneTextSubtleStyle}" />
+                                               TextWrapping="Wrap" 
+                                               Margin="10,-2,10,0" 
+                                               Style="{StaticResource PhoneTextSubtleStyle}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -134,9 +134,9 @@
                                         	TextWrapping="Wrap" 
                                         	Margin="0,0,10,0" 
                                         	Style="{StaticResource PhoneTextSubtleStyle}" />
-                                    </StackPanel>
-                                </StackPanel>
-                            </StackPanel>
+                        </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                     <i:Interaction.Triggers>
