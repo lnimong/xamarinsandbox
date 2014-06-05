@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace App.WP8.Tool
 {
-	public static class Box
-	{
-		public static Uri Page(string str) {
+    public static class Box
+    {
+        public static Uri Page(string str)
+        {
 
-			var strs = str.Split ('/');
-			var page = strs [0];
+            var strs = str.Split('/');
+            var page = strs[0];
 
-			switch (page) {
+            switch (page)
+            {
                 //case "CarListPage": 
                 //	return new CarListActivity().Class;
                 //case "CategoryListPage": 
@@ -22,14 +25,26 @@ namespace App.WP8.Tool
                 //case "CallPage": 
                 //	return new CallActivity().Class;
                 case "RentPage":
-                    return new Uri("/RentPage.xaml");
+                    return new Uri(string.Format("/RentPage.xaml?categoryId={0}", strs[1]), UriKind.Relative);
                     //case "BuyPage":
                     //	return new BuyTheCarActivity ().Class;
                     //case "MainPage": 
                     //	return new MainActivity().Class;
             }
-			return null;
-		}
-	}
+            return null;
+        }
+
+        public static Dictionary<string, string> ParseQuery(Uri uri)
+        {
+            return uri.OriginalString.Split('?')[1].Split('&').ToDictionary(p =>
+            {
+                return p.Split('=')[0];
+            },
+            p =>
+            {
+                return p.Split('=')[1];
+            });
+        }
+    }
 }
 

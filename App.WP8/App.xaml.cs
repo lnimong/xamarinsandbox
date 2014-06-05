@@ -10,6 +10,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using App.WP8.Resources;
 using App.WP8.ViewModels;
+using App.WP8.Tool;
 
 namespace App.WP8
 {
@@ -150,9 +151,12 @@ namespace App.WP8
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
 
+            App.ViewModel.Goto += (uri) => RootFrame.Navigate(Box.Page(uri));
+
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
         }
+
 
         // Do not add any additional code to this method
         private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e)
