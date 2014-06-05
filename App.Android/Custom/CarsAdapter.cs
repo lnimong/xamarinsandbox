@@ -41,7 +41,7 @@ namespace Android02.Custom
 			name.Text = car.BrandName;
 			dist.Text = car.Distance + "km";
 			year.Text = car.Year.ToString();
-			fuel.Text = "essence";
+			fuel.Text = car.Fuel;
 
 			// Return the completed view to render on screen
 			return itemView;

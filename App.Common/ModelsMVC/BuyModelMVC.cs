@@ -48,7 +48,7 @@ namespace App.Common.ModelMVC
 				return string.Format(@"Vous avez sélectionné la {0} {1}, cette voiture est à moteur {2} de {3} ayant déjà roulé {4} km environ. Merci de compléter le formulaire suivant afin de faciliter la prise en charge de votre demande",
 					c.Brand,
 					c.Model,
-					"Essence",
+					c.Fuel,
 					c.Year,
 					c.Distance
 				);

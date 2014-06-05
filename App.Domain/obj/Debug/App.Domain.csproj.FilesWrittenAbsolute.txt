@@ -1,5 +1,0 @@
-/Users/appleo/Projects/Android02/App.Domain/obj/Debug/.NETPortable,Version=v4.0,Profile=Profile136.AssemblyAttribute.cs
-/Users/appleo/Projects/Android02/App.Domain/bin/Debug/App.Domain.dll.mdb
-/Users/appleo/Projects/Android02/App.Domain/bin/Debug/App.Domain.dll
-/Users/appleo/Projects/Android02/App.Domain/obj/Debug/App.Domain.dll
-/Users/appleo/Projects/Android02/App.Domain/obj/Debug/App.Domain.dll.mdb
