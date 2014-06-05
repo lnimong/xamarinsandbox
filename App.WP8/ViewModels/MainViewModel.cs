@@ -18,6 +18,10 @@ namespace App.WP8.ViewModels
             var vm = new CategoryListModelMVC();
 
             this.RentItems = new ObservableCollection<CategoryModelMVC>(vm.Categories);
+
+            var vmCars = new CarListModelMVC();
+
+            this.CarsItems = new ObservableCollection<CarModelMVC>(vmCars.Cars);
         }
 
         private void InitMenu()
@@ -44,11 +48,20 @@ namespace App.WP8.ViewModels
             }
         }
 
+        public ICommand CarClick
+        {
+            get
+            {
+                return new RelayCommand<CarModelMVC>(c => this.Goto(c.BuyPage));
+            }
+        }
+
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
         public ObservableCollection<ItemViewModel> MenuItems { get; private set; }
         public ObservableCollection<CategoryModelMVC> RentItems { get; private set; }
+        public ObservableCollection<CarModelMVC> CarsItems { get; private set; }
 
         private string _sampleProperty = "Sample Runtime Property Value";
         /// <summary>

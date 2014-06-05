@@ -26,8 +26,8 @@ namespace App.WP8.Tool
                 //	return new CallActivity().Class;
                 case "RentPage":
                     return new Uri(string.Format("/RentPage.xaml?categoryId={0}", strs[1]), UriKind.Relative);
-                    //case "BuyPage":
-                    //	return new BuyTheCarActivity ().Class;
+                case "BuyPage":
+                    return new Uri(string.Format("/BuyPage.xaml?carId={0}", strs[1]), UriKind.Relative);
                     //case "MainPage": 
                     //	return new MainActivity().Class;
             }
