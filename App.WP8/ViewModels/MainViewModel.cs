@@ -4,6 +4,7 @@ using System.ComponentModel;
 using App.WP8.Resources;
 using App.Common.ModelMVC;
 using System.Windows.Input;
+using Microsoft.Phone.Tasks;
 
 namespace App.WP8.ViewModels
 {
@@ -30,14 +31,27 @@ namespace App.WP8.ViewModels
 
             this.MenuItems = new ObservableCollection<ItemViewModel>();
 
-            MenuItems.Add(new ItemViewModel(menumodel.AboutUs));
-            MenuItems.Add(new ItemViewModel(menumodel.CallUs));
-            MenuItems.Add(new ItemViewModel(menumodel.MailUs));
+            var about = new ItemViewModel(menumodel.AboutUs);
+            about.RequireNavigation += (uri) => Goto(uri);
+           MenuItems.Add(about);
 
-            foreach (var item in MenuItems)
+            var call = new ItemViewModel(menumodel.CallUs);
+            call.RequireNavigation += (uri) =>
             {
-                item.RequireNavigation += (uri) => Goto(uri);
-            }
+                var callmodel = new CallModelMVC();
+
+                PhoneCallTask phoneCallTask = new PhoneCallTask();
+
+                phoneCallTask.PhoneNumber = callmodel.PhoneNumber;
+                phoneCallTask.DisplayName = callmodel.PhoneNumber;
+
+                phoneCallTask.Show();
+            };
+            MenuItems.Add(call);
+
+            var mail = new ItemViewModel(menumodel.MailUs);
+            mail.RequireNavigation += (uri) => Goto(uri);
+            MenuItems.Add(mail);
         }
 
         public ICommand RentClick

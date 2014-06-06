@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     x:Class="App.WP8.MainPage"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
@@ -16,9 +17,131 @@
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+	<Grid x:Name="LayoutRoot" Background="White">
+		<phone:Panorama  Background="{x:Null}" Foreground="#FF333333">
+			<phone:Panorama.Resources>
+				<DataTemplate x:Key="DataTemplate1">
+					<StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="CELLENZA" VerticalAlignment="Center" FontSize="48" FontWeight="SemiBold" Foreground="Black"/>
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="CARS" VerticalAlignment="Center" FontSize="48" FontWeight="SemiBold" Foreground="#FF5F2481"/>
+						<Image Source="/Resources/car.png" Width="45" Margin="10,0,0,20" VerticalAlignment="Center"/>
+					</StackPanel>
+				</DataTemplate>
+			</phone:Panorama.Resources>
+			<phone:Panorama.TitleTemplate>
+				<StaticResource ResourceKey="DataTemplate1"/>
+			</phone:Panorama.TitleTemplate>
 
-        <!-- LOCALIZATION NOTE:
+			<!--Panorama item one-->
+
+			<!--Panorama item three-->
+			<!--Panorama item two-->
+			<phone:PanoramaItem Header="louer">
+                <!--Double line list with image placeholder and text wrapping using a floating header that scrolls with the content-->
+				<phone:LongListSelector x:Name="longListSelector" Margin="0,-38,-22,2" 
+					ItemsSource="{Binding RentItems}">
+					<phone:LongListSelector.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal" 
+								Margin="12,2,0,4" 
+								Height="105" 
+								Width="432">
+								<!--Replace rectangle with image-->
+								<Image Source="{Binding Id, Converter={StaticResource ResourceKey=CategoryIdImageConverter}}" Width="75" Height="75" />
+								<StackPanel Width="311" Margin="8,-7,0,0" VerticalAlignment="Center">
+									<TextBlock Text="{Binding Name}" 
+										TextWrapping="Wrap" 
+										Margin="10,0" 
+										Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="#FF333333" FontSize="29.333" />
+									<TextBlock Text="{Binding Description}" 
+										TextWrapping="Wrap" 
+										Margin="10,-2,10,0" 
+										Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FF333333" />
+								</StackPanel>
+							</StackPanel>
+						</DataTemplate>
+					</phone:LongListSelector.ItemTemplate>
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="Tap">
+							<i:InvokeCommandAction Command="{Binding RentClick}" CommandParameter="{Binding SelectedItem, ElementName=longListSelector}"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+				</phone:LongListSelector>
+			</phone:PanoramaItem>
+			<phone:PanoramaItem Header="acheter">
+                <!--Double line list with image placeholder and text wrapping using a floating header that scrolls with the content-->
+				<phone:LongListSelector x:Name="longListSelector1" Margin="0,-22,-22,2" 
+					ItemsSource="{Binding CarsItems}">
+					<phone:LongListSelector.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal" 
+								Margin="12,2,0,4" 
+								Height="105" 
+								Width="432">
+								<!--Replace rectangle with image-->
+								<Image  Width="99" 
+									Height="99" Source="Resources/Sample.png" VerticalAlignment="Top" />
+								<StackPanel Width="311" Margin="10,0,0,0">
+									<StackPanel Margin="0,0,10,0" Orientation="Horizontal">
+										<TextBlock Text="{Binding BrandName}" 
+											TextWrapping="Wrap" 
+											Margin="0,-7,0,0" 
+											Style="{StaticResource PhoneTextExtraLargeStyle}" 
+											FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="#FF333333" HorizontalAlignment="Left" />
+									</StackPanel>
+									<StackPanel Margin="0,0,10,0" Orientation="Horizontal">
+										<TextBlock Text="{Binding Year}" 
+											TextWrapping="Wrap" 
+											Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FF333333" VerticalAlignment="Bottom" Margin="0,0,12,0" />
+										<TextBlock Text="{Binding Fuel}" 
+											TextWrapping="Wrap" 
+											Margin="0,0,10,0" 
+											Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FF333333" />
+										<TextBlock Text="{Binding Distance, StringFormat=\{0:### ###\} km}" 
+											TextWrapping="Wrap" 
+											Margin="0,0,10,0" 
+											Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FF333333" />
+									</StackPanel>
+								</StackPanel>
+							</StackPanel>
+						</DataTemplate>
+					</phone:LongListSelector.ItemTemplate>
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="Tap">
+							<i:InvokeCommandAction Command="{Binding CarClick}" CommandParameter="{Binding SelectedItem, ElementName=longListSelector1}"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+				</phone:LongListSelector>
+			</phone:PanoramaItem>
+			<phone:PanoramaItem Header="informations">
+				<ItemsControl Margin="0,-26,-22,0" 
+					ItemsSource="{Binding MenuItems}">
+					<ItemsControl.Resources>
+						<ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+							<toolkit:WrapPanel>
+							</toolkit:WrapPanel>
+						</ItemsPanelTemplate>
+					</ItemsControl.Resources>
+					<ItemsControl.ItemsPanel>
+						<StaticResource ResourceKey="ItemsPanelTemplate1"/>
+					</ItemsControl.ItemsPanel>
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Margin="0,-6,0,12">
+								<Button Command="{Binding Go}" Background="#FF5F2481" Width="200" Height="200">
+									<TextBlock Text="{Binding LineOne}" 
+										TextWrapping="Wrap" 
+										Style="{StaticResource PhoneTextExtraLargeStyle}" LineHeight="32" Margin="4,0" LineStackingStrategy="BlockLineHeight" FontSize="32" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+								</Button>
+							</StackPanel>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</phone:PanoramaItem>
+
+		</phone:Panorama>
+
+		<!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
             keys in the app's neutral language resource file (AppResources.resx) then
             replace the hard-coded text value between the attributes' quotation marks
@@ -37,126 +160,15 @@
             CurrentUICulture of the app at run time.
          -->
 
-         <!--Panorama control-->
-        <phone:Panorama Title="cellenza cars">
-            <phone:Panorama.Background>
-                <ImageBrush ImageSource="/App.WP8;component/Assets/PanoramaBackground.png"/>
-            </phone:Panorama.Background>
+		<!--Panorama control-->
 
-            <!--Panorama item one-->
-            <phone:PanoramaItem Header="">
-                <!--Single line list with text wrapping-->
-                <phone:LongListSelector Margin="0,0,-22,0" 
-                                        ItemsSource="{Binding MenuItems}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-6,0,12">
-                                <Button Command="{Binding Go}">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <TextBlock Text="{Binding LineOne}" 
-                                                       TextWrapping="Wrap" 
-                                                       Style="{StaticResource PhoneTextExtraLargeStyle}" 
-                                                       FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PanoramaItem>
-
-            <!--Panorama item two-->
-            <phone:PanoramaItem Header="Louer">
-                <!--Double line list with image placeholder and text wrapping using a floating header that scrolls with the content-->
-                <phone:LongListSelector x:Name="longListSelector" Margin="0,-38,-22,2" 
-					ItemsSource="{Binding RentItems}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" 
-                                        Margin="12,2,0,4" 
-                                        Height="105" 
-                                        Width="432">
-                                <!--Replace rectangle with image-->
-                                <Image Source="{Binding Id, Converter={StaticResource ResourceKey=CategoryIdImageConverter}}"  Width="99" 
-									Height="99" />
-                                <StackPanel Width="311" Margin="8,-7,0,0">
-                                    <TextBlock Text="{Binding Name}" 
-                                               TextWrapping="Wrap" 
-                                               Margin="10,0" 
-                                               Style="{StaticResource PhoneTextExtraLargeStyle}" 
-                                               FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock Text="{Binding Description}" 
-                                               TextWrapping="Wrap" 
-                                               Margin="10,-2,10,0" 
-                                               Style="{StaticResource PhoneTextSubtleStyle}" />
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Tap">
-                            <i:InvokeCommandAction Command="{Binding RentClick}" CommandParameter="{Binding SelectedItem, ElementName=longListSelector}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </phone:LongListSelector>
-            </phone:PanoramaItem>
-            <phone:PanoramaItem Header="Acheter">
-                <!--Double line list with image placeholder and text wrapping using a floating header that scrolls with the content-->
-                <phone:LongListSelector x:Name="longListSelector1" Margin="0,-38,-22,2" 
-					ItemsSource="{Binding CarsItems}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" 
-								Margin="12,2,0,4" 
-								Height="105" 
-								Width="432">
-                                <!--Replace rectangle with image-->
-                                <Image  Width="99" 
-									Height="99" Source="Resources/Sample.png" />
-                                <StackPanel Width="311" Margin="8,-7,0,0">
-                                    <TextBlock Text="{Binding BrandName}" 
-										TextWrapping="Wrap" 
-										Margin="10,0" 
-										Style="{StaticResource PhoneTextExtraLargeStyle}" 
-										FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <StackPanel Margin="10,0" Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Fuel}" 
-                                        	TextWrapping="Wrap" 
-                                        	Margin="0,0,10,0" 
-                                        	Style="{StaticResource PhoneTextSubtleStyle}" />
-                                        <TextBlock Text="{Binding Distance, StringFormat=\{0\} km}" 
-                                        	TextWrapping="Wrap" 
-                                        	Margin="0,0,10,0" 
-                                        	Style="{StaticResource PhoneTextSubtleStyle}" />
-                                        <TextBlock Text="{Binding Year}" 
-                                        	TextWrapping="Wrap" 
-                                        	Margin="0,0,10,0" 
-                                        	Style="{StaticResource PhoneTextSubtleStyle}" />
-                        </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Tap">
-                            <i:InvokeCommandAction Command="{Binding CarClick}" CommandParameter="{Binding SelectedItem, ElementName=longListSelector1}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </phone:LongListSelector>
-            </phone:PanoramaItem>
-
-            <!--Panorama item three-->
-        </phone:Panorama>
-
-        <!--Uncomment to see an alignment grid to help ensure your controls are
+		<!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)
             if the System Tray is hidden.
 
             Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
 
-    </Grid>
+	</Grid>
 </phone:PhoneApplicationPage>

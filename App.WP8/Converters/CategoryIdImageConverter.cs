@@ -14,13 +14,20 @@ namespace App.WP8.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var image = new BitmapImage();
-            using (var m = new MemoryStream(GetImage((string)value)))
+            var bytes = GetImage((string)value);
+
+            if (bytes != null)
             {
-                image.SetSource(m);
+                var image = new BitmapImage();
+                using (var m = new MemoryStream(bytes))
+                {
+                    image.SetSource(m);
+                }
+
+                return image;
             }
 
-            return image;
+            return null;
         }
 
         private static byte[] GetImage(string id)

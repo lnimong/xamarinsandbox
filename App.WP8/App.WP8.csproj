@@ -106,9 +106,6 @@
     <Compile Include="BuyPage.xaml.cs">
       <DependentUpon>BuyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CallPage.xaml.cs">
-      <DependentUpon>CallPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RentPage.xaml.cs">
       <DependentUpon>RentPage.xaml</DependentUpon>
     </Compile>
@@ -124,7 +121,6 @@
     </Compile>
     <Compile Include="Tool\Box.cs" />
     <Compile Include="ViewModels\MessageViewModel.cs" />
-    <Compile Include="ViewModels\CallViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\BuyViewModel.cs" />
     <Compile Include="ViewModels\RentViewModel.cs" />
@@ -149,10 +145,6 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="BuyPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CallPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -184,6 +176,7 @@
     <Content Include="Assets\AppBar\check.png" />
     <Content Include="README_FIRST.txt" />
     <Resource Include="Resources\Sample.png" />
+    <Content Include="Resources\car.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

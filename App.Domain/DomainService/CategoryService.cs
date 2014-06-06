@@ -30,7 +30,7 @@ namespace App.Domain.DomainService
 				},
 				new Category() {
 					Id = "003",
-					Name = " Berline Familiale",
+					Name = "Berline Familiale",
 					Description = "de type Citroen DS4  Executive | Ford Mondéo berline et break  Business Nav | Volvo V40 Momentum Business "
 				},
 				new Category() {
