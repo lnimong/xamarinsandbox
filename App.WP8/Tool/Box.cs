@@ -22,8 +22,8 @@ namespace App.WP8.Tool
                 //	return new CarListActivity().Class;
                 //case "MailPage": 
                 //	return new MessageActivity().Class;
-                //case "CallPage": 
-                //	return new CallActivity().Class;
+                case "CallPage":
+                    return new Uri("/CallPage.xaml", UriKind.Relative);
                 case "RentPage":
                     return new Uri(string.Format("/RentPage.xaml?categoryId={0}", strs[1]), UriKind.Relative);
                 case "BuyPage":
@@ -36,14 +36,19 @@ namespace App.WP8.Tool
 
         public static Dictionary<string, string> ParseQuery(Uri uri)
         {
-            return uri.OriginalString.Split('?')[1].Split('&').ToDictionary(p =>
+            if (uri.OriginalString.Contains("?"))
             {
-                return p.Split('=')[0];
-            },
-            p =>
-            {
-                return p.Split('=')[1];
-            });
+                return uri.OriginalString.Split('?')[1].Split('&').ToDictionary(p =>
+                {
+                    return p.Split('=')[0];
+                },
+                    p =>
+                {
+                    return p.Split('=')[1];
+                });
+            }
+
+            return null;
         }
     }
 }
