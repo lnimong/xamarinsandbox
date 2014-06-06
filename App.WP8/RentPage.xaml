@@ -32,39 +32,41 @@
 			<TextBlock Text="MON APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
 			<TextBlock Text="nom de la page" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
-		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
-			<TextBlock Text="{Binding RentModel.Explain}" Margin="9,-7,0,0" TextWrapping="Wrap"/>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Nom"/>
-				<TextBox Height="72" TextWrapping="Wrap"/>
-			</StackPanel>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Prénom"/>
-				<TextBox Height="72" TextWrapping="Wrap"/>
-			</StackPanel>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Code postal"/>
-				<TextBox Height="72" TextWrapping="Wrap"/>
-			</StackPanel>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Email"/>
-				<TextBox Height="72" TextWrapping="Wrap"/>
-			</StackPanel>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Téléphone"/>
-				<TextBox Height="72" TextWrapping="Wrap"/>
-			</StackPanel>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Date de location souhaitée :"/>
-				<toolkit:DatePicker/>
-			</StackPanel>
-			<StackPanel Height="100">
-				<TextBlock TextWrapping="Wrap" Text="Durée de la location"/>
-				<TextBox Height="72" TextWrapping="Wrap"/>
-			</StackPanel>
-		</StackPanel>
+        <ScrollViewer x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
+            <Grid>
+                <TextBlock Text="{Binding RentModel.Explain}" TextWrapping="Wrap" Margin="9,-7,0,515"/>
+                <StackPanel Margin="0,20,0,415">
+                    <TextBlock TextWrapping="Wrap" Text="Nom"/>
+                    <TextBox Height="72" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Margin="0,120,0,315">
+                    <TextBlock TextWrapping="Wrap" Text="Prénom"/>
+                    <TextBox Height="72" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Margin="0,220,0,215">
+                    <TextBlock TextWrapping="Wrap" Text="Code postal"/>
+                    <TextBox Height="72" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Margin="0,320,0,115">
+                    <TextBlock TextWrapping="Wrap" Text="Email"/>
+                    <TextBox Height="72" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Margin="0,420,0,15">
+                    <TextBlock TextWrapping="Wrap" Text="Téléphone"/>
+                    <TextBox Height="72" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Margin="0,520,0,-85">
+                    <TextBlock TextWrapping="Wrap" Text="Date de location souhaitée :"/>
+                    <toolkit:DatePicker/>
+                </StackPanel>
+                <StackPanel Margin="0,620,0,-185">
+                    <TextBlock TextWrapping="Wrap" Text="Durée de la location"/>
+                    <TextBox Height="72" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
 
-		<!--ContentPanel - placez tout contenu supplémentaire ici-->
+        <!--ContentPanel - placez tout contenu supplémentaire ici-->
 	</Grid>
 
 </phone:PhoneApplicationPage>

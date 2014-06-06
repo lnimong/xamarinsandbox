@@ -20,8 +20,8 @@ namespace App.WP8.Tool
                 //	return new CategoryListActivity().Class;
                 //case "AboutPage": 
                 //	return new CarListActivity().Class;
-                //case "MailPage": 
-                //	return new MessageActivity().Class;
+                case "MailPage":
+                    return new Uri("/MessagePage.xaml", UriKind.Relative);
                 case "CallPage":
                     return new Uri("/CallPage.xaml", UriKind.Relative);
                 case "RentPage":
